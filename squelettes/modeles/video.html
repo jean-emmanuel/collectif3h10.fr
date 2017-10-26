@@ -1,0 +1,12 @@
+<div class="spip_video[ (#ENV{type})][ (#ENV{align}|match{left|right|center})]">
+
+    <div class="background" style="background-image:url(#ENV{thumb})"></div>
+    
+    <a href="#ENV{url}" class="play">
+        <span class="icon"><i class="fa fa-play triangle"></i></span>
+        <span class="caption">#ENV{args/title}</span>
+    </a>
+
+    <img src="[(#CHEMIN{img/dummy.gif}|image_recadre{16,9,'center','transparent'}|extraire_attribut{src})]" width="100%"/>
+    
+</div>

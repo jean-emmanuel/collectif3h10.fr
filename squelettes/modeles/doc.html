@@ -1,0 +1,23 @@
+#SET{id,#ARRAY}#SET{id, #GET{id}|array_merge{#ENV{id}|concat{',',#ENV{id}}|explode{','}}}
+<BOUCLE_rub(DOCUMENTS){id_rubrique=#ENV{args/id_rubrique}}>#SET{id,#GET{id}|array_merge{#ARRAY{0,#ID_DOCUMENT}}}</BOUCLE_rub>
+<BOUCLE_art(DOCUMENTS){id_article=#ENV{args/id_article}}>#SET{id,#GET{id}|array_merge{#ARRAY{0,#ID_DOCUMENT}}}</BOUCLE_art>
+
+<B_img>
+    <BOUCLE_img(DOCUMENTS){si #GET{id}|sizeof|=={2}|oui}{id_document IN #GET{id}}{par titre, num titre}>
+<div class="document solo[ (#ENV{align}|match{left|right|center})]">
+    <a href="#URL_DOCUMENT" target="_blank" class="button icon fa-download[ (#ENV{special}|oui)special][ (#ENV{fit}|oui)fit]">[(#TITRE|sinon{#FICHIER|basename}|ucfirst)]</a>
+</div>
+    </BOUCLE_img>
+</B_img>
+
+<B_imgs>
+<div class="box alt">
+    <div class="row 100% uniform">
+    <BOUCLE_imgs(DOCUMENTS){si #GET{id}|sizeof|=={2}|non}{id_document IN #GET{id}}{par titre, num titre}>
+        <div class="[(#ENV{args/XxXxX,12}|div{#ENV{args/n}|match{1|2|3|4|6|12}}|sinon{4})u] 12u(3)">
+                <a href="#URL_DOCUMENT" target="_blank" class="button icon fa-download fit">[(#TITRE|sinon{#FICHIER|basename}|ucfirst)]</a>
+        </div>
+    </BOUCLE_imgs>
+    </div>
+</div>
+</B_imgs>

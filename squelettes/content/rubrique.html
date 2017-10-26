@@ -1,0 +1,20 @@
+<div id="content" class="test-block">
+
+<BOUCLE_rubrique(RUBRIQUES){id_rubrique=#ENV{id_rubrique}}{tout}>
+
+<h1 class="hidden">#TITRE</h1>
+
+#TEXTE
+
+<BOUCLE_articles(ARTICLES){id_rubrique}{par num titre, titre}>
+
+<h3>#TITRE</h3>
+
+#TEXTE
+
+</BOUCLE_articles>
+
+
+</BOUCLE_rubrique>
+
+</div>

@@ -1,0 +1,15 @@
+#SET{id,#ENV{url}|video_id}
+#SET{json, #GET{json,https://api.dailymotion.com/video/#GET{id}?fields=}|concat{'title,thumbnail_url,embed_url'}}
+#SET{data,#ARRAY}
+<BOUCLE_dailymotion(DATA){source json, #GET{json}}>#SET{data,#GET{data}|push{#VALEUR}}</BOUCLE_dailymotion>
+
+#INCLURE{fond=modeles/player,
+    type=dailymotion,
+    thumb=#GET{data/1}|image_reduire{1920}|extraire_attribut{src},
+    title=#ENV{args/titre,#GET{data/0}},
+    url=#ENV{url},
+    embed_url=#GET{data/2}?autoplay=1,
+    align=#ENV{align},
+    notitle=#ENV{notitle},
+    id_doc=#ENV{img}
+}

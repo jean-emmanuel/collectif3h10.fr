@@ -1,0 +1,44 @@
+[(#REM)
+
+    SPIP BOILERPLATE - v0.1
+
+    HEAD
+        - Header, menu ...
+
+]
+
+<div id="nav">
+
+    <div class="wrapper test-block">
+
+        <h2 class="[(#SOMMAIRE|oui)on]">
+            <a href="./">// #NOM_SITE_SPIP</a>
+        </h2>
+
+        <ul>
+            <li class="left">
+                <ul>
+                <BOUCLE_pages(RUBRIQUES){id_parent=1}{tout}>
+                    <li class="#EXPOSE pages"><a href="#URL_RUBRIQUE">#TITRE</a></li>
+                </BOUCLE_pages>
+                <BOUCLE_groupes(RUBRIQUES){id_parent=2}{tout}>
+                    <li class="#EXPOSE"><a href="#URL_RUBRIQUE">#TITRE</a></li>
+                </BOUCLE_groupes>
+                </ul>
+            </li>
+            <li class="right">
+                <ul>
+                <BOUCLE_liens(SITES){id_rubrique=1}{par num nom_site}>
+                <li class=""><a href="#URL_SITE" title="#NOM_SITE" target="_blank"><i class="fa fa-fw fa-[(#DESCRIPTIF|textebrut|sinon{globe})]"><span>#NOM_SITE</span></i></a></li>
+                </BOUCLE_liens>
+                </ul>
+            </li>
+
+        </ul>
+
+    </div>
+
+</div>
+
+<div id="main">
+    <div class="wrapper">

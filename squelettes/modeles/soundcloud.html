@@ -1,0 +1,18 @@
+#SET{json, #GET{json,'https://soundcloud.com/oembed?format=json'}|concat{&client_id=,#SOUNDCLOUD_API_KEY|replace{nocrash_,''}}|concat{&auto_play=1,&url=,#ENV{url}}}
+
+<BOUCLE_soundcloud(DATA){source json, #GET{json}}>
+#SET{data,#GET{data,#ARRAY}|array_merge{#ARRAY{#CLE,#VALEUR**}}}
+</BOUCLE_soundcloud>
+
+#INCLURE{fond=modeles/player,
+    type=souncloud,
+    thumb=#GET{data}|table_valeur{thumbnail_url}|image_reduire{1920}|extraire_attribut{src},
+    title=#ENV{args/titre,#GET{data}|table_valeur{title}},
+    url=#ENV{url},
+    embed_url=#GET{data}|table_valeur{html}|html_entity_decode|extraire_attribut{src},
+    align=#ENV{align},
+    notitle=#ENV{notitle},
+    id_doc=#ENV{img}
+}
+
+</B_soundcloud>

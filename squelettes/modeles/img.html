@@ -1,0 +1,31 @@
+#SET{id,#ARRAY}#SET{id, #GET{id}|array_merge{#ENV{id}|concat{',',#ENV{id}}|explode{','}}}
+<BOUCLE_rub(DOCUMENTS){id_rubrique=#ENV{args/id_rubrique}}>#SET{id,#GET{id}|array_merge{#ARRAY{0,#ID_DOCUMENT}}}</BOUCLE_rub>
+<BOUCLE_art(DOCUMENTS){id_article=#ENV{args/id_article}}>#SET{id,#GET{id}|array_merge{#ARRAY{0,#ID_DOCUMENT}}}</BOUCLE_art>
+
+<B_img>
+    <BOUCLE_img(DOCUMENTS){si #GET{id}|sizeof|=={2}|oui}{id_document IN #GET{id}}{par titre, num titre}>
+<div class="image solo [(#ENV{align}|match{left|right}|sinon{fit})]">
+[(#ENV{args/url}|!={non}|oui)<a href="#ENV{url, #URL_DOCUMENT}">]
+    #SET{img, #URL_DOCUMENT|image_reduire{640}}
+    [(#ENV{ratio}|oui) #SET{img, #GET{img}|image_recadre{#ENV{ratio}}}]
+    <img src="[(#GET{img}|extraire_attribut{src})]"[ title="(#TITRE|textebrut)"]>
+[(#ENV{args/url}|!={non}|oui)</a>]
+</div>
+    </BOUCLE_img>
+</B_img>
+
+<B_imgs>
+<div class="box alt gallery">
+    <div class="row 100% uniform">
+    <BOUCLE_imgs(DOCUMENTS){si #GET{id}|sizeof|=={2}|non}{id_document IN #GET{id}}{par titre, num titre}>
+        <div class="[(#ENV{args/XxXxX,12}|div{#ENV{args/n}|match{1|2|3|4|6|12}}|sinon{4})u] 12u(3)">
+            <div class="image cell" style="background-image:url(#URL_DOCUMENT)" >
+            <a href="#URL_DOCUMENT">
+                <img src="[(#CHEMIN{img/dummy.gif}|image_recadre{16,9}|extraire_attribut{src})]" width="100%" title="zekufhzbe">
+            </a>
+            </div>
+        </div>
+    </BOUCLE_imgs>
+    </div>
+</div>
+</B_imgs>

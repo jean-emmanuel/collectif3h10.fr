@@ -1,0 +1,22 @@
+#HTTP_HEADER{HTTP/1.0  #ENV{code,'404 Not Found'}}
+#HTTP_HEADER{"Cache-Control: no-store, no-cache, must-revalidate"}
+#HTTP_HEADER{Pragma: no-cache}
+#INCLURE{fond=inc/meta,env}
+
+#EVAL{'chr(10)'}#EVAL{'chr(10)'}
+
+#INCLURE{fond=inc/head,env, sommaire=oui}
+
+#EVAL{'chr(10)'}#EVAL{'chr(10)'}
+
+<div id="content" class="test-block">
+
+<h1>Oops</h1>
+
+<em>Cette page est introuvable !</em>
+
+</div>
+
+#EVAL{'chr(10)'}#EVAL{'chr(10)'}
+
+#INCLURE{fond=inc/foot,env}

@@ -1,0 +1,17 @@
+<BOUCLE_custom_thumb(DOCUMENTS){id_document=#ENV{id_doc}}>
+#SET{thumb,#URL_DOCUMENT|image_reduire{640}|image_recadre{16:9,'-'}|extraire_attribut{src}}
+</BOUCLE_custom_thumb>
+
+<div class="player image[ (#ENV{type})][ (#ENV{align}|match{left|right}|sinon{fit})]">
+
+    <div class="background" style="background-image:url(#GET{thumb,#ENV{thumb}})"></div>
+
+    <a href="#ENV{url}" data-embed="#ENV{embed_url}" class="play">
+        <span class="icon"><i class="fa fa-play triangle"></i></span>
+
+        <span class="caption [(#NOTITLE|oui)hidden]">#TITLE</span>
+    </a>
+
+    <img src="[(#CHEMIN{img/dummy.gif}|image_recadre{16,9,'center','transparent'}|extraire_attribut{src})]"/>
+
+</div>

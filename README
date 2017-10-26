@@ -1,0 +1,6 @@
+## plugins
+- https://contrib.spip.net/Simple-Calendrier-v2
+
+## notes
+- quelques id_rubriques en dur en squelettes/inc/head.html
+- clés à remplir dans squelettes/api_keys.php pour les vidéos youtube

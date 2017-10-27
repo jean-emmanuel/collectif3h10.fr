@@ -10,8 +10,17 @@
     url=#ENV{url},
     embed_url=http://www.youtube.com/embed/#GET{id}?rel=0&autoplay=1,
     align=#ENV{align},
-    notitle=#ENV{notitle},
     id_doc=#ENV{img}
 }
 
 </BOUCLE_youtube>
+
+#INCLURE{fond=modeles/player,
+    type=youtube,
+    title=#ENV{args/titre,non},
+    url=#ENV{url},
+    align=#ENV{align},
+    id_doc=#ENV{img},
+}
+
+<//B_youtube>

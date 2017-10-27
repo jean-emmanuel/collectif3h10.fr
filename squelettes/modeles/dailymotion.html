@@ -10,6 +10,17 @@
     url=#ENV{url},
     embed_url=#GET{data/2}?autoplay=1,
     align=#ENV{align},
-    notitle=#ENV{notitle},
     id_doc=#ENV{img}
 }
+
+</B_dailymotion>
+
+#INCLURE{fond=modeles/player,
+    type=dailymotion,
+    title=#ENV{args/titre,non},
+    url=#ENV{url},
+    align=#ENV{align},
+    id_doc=#ENV{img},
+}
+
+<//B_dailymotion>

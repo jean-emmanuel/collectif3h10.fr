@@ -80,4 +80,25 @@
         return $flux;
     }
 
+    // bandcamp album id retreiver
+    function bandcamp_album_id($url) {
+
+        $content = file_get_contents($url, false, null, -1);
+
+        if (preg_match('/<!-- album id ([0-9]*) -->/UimsS', $content, $match)) {
+
+            if (isset($match[1])) {
+                return $match[1];
+            } else {
+                return false;
+            }
+
+        } else {
+
+            return false;
+
+        }
+
+    }
+
 ?>

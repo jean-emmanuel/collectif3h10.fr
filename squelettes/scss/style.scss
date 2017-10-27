@@ -139,6 +139,11 @@ h1, h2, h3 {
         line-height: 34px;
         padding:0 7px;
         font-size: 14px;
+        &:after {
+            content:"";
+            display: table;
+            width: 100%;
+        }
     }
 
 }
@@ -308,6 +313,14 @@ h1, h2, h3 {
         #content, #side {
             float:none;
             width:100%;
+        }
+
+        #content {
+            h1, h2, h3 {
+                height: auto;
+                padding-top: 2px;
+                line-height: 28px;
+            }
         }
 
         #side {

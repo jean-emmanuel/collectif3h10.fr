@@ -6,7 +6,7 @@ $(function() {
 
         var player = $(this);
 
-        player.find('.play').click(function(e){
+        player.find('.play[data-embed]').click(function(e){
             e.preventDefault();
             player.append('<iframe type="text/html" src="'+$(this).attr('data-embed').replace('http://','https://')+'" frameborder="0" allowfullscreen="true"/\>')
             player.find('.play').fadeOut(200);

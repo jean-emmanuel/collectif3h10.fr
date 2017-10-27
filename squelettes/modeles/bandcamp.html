@@ -1,7 +1,12 @@
 <BOUCLE_custom_thumb(DOCUMENTS){id_document=#ENV{img}}>
 #SET{thumb,#URL_DOCUMENT|image_reduire{360}|image_recadre{1:1,'-'}|extraire_attribut{src}}
 </BOUCLE_custom_thumb>
+
 <div class="bc-player">
-    [<img src="(#GET{thumb})"/>]
-    <div class="frame"><iframe src="https://bandcamp.com/EmbeddedPlayer/album=#ENV{id}/size=large/bgcol=ffffff/linkcol=333333/artwork=[(#GET{thumb}|?{none,small})]/transparent=true/" seamless></iframe></div>
+    [
+    [(#URL|oui)<a href="#URL" target="_blank">]
+        <img src="(#GET{thumb})"/>
+    [(#URL|oui)</a>]
+    ]
+    <div class="frame"><iframe src="https://bandcamp.com/EmbeddedPlayer/album=#ENV{id, #URL|bandcamp_album_id}/size=large/bgcol=ffffff/linkcol=333333/artwork=[(#GET{thumb}|?{none,small})]/transparent=true/" seamless></iframe></div>
 </div>

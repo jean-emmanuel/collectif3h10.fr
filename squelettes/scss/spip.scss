@@ -73,12 +73,14 @@ i {
             border-radius: 30px;
             background:rgba(black,.5);
 
-            .triangle {
-                position:absolute;
-                left:0;right:0;top:0;bottom:0;
-                line-height:56px;
+            .fa-play {
+                line-height:54px;
                 font-size:20px;
                 padding-left:4px;
+            }
+            .fa-remove {
+                line-height:52px;
+                font-size:16px;
             }
 
         }
@@ -116,7 +118,7 @@ i {
     height: 241px;
     width:100%;
 
-    img {
+    > img, > a {
         float:left;
         display: block;
         width: 100%;

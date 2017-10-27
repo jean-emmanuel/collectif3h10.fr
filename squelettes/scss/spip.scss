@@ -130,6 +130,11 @@ i {
         display: table-cell;
     }
 
+    a img {
+        margin:0;
+        display: block;
+    }
+
     .frame {
         height: 100%;
         flex:1;

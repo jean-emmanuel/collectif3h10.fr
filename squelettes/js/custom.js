@@ -16,7 +16,7 @@ $(function() {
 
     });
 
-    $('.spip_out').attr('target','_blank')
+    // $('.spip_out').attr('target','_blank')
 
     if ($(document).width() < 940) {
 

@@ -5,7 +5,7 @@
 <B_img>
     <BOUCLE_img(DOCUMENTS){si #GET{id}|sizeof|=={2}|oui}{id_document IN #GET{id}}{par titre, num titre}>
 <div class="document solo[ (#ENV{align}|match{left|right|center})]">
-    <a href="#URL_DOCUMENT" target="_blank" class="button icon fa-download[ (#ENV{special}|oui)special][ (#ENV{fit}|oui)fit]">[(#TITRE|sinon{#FICHIER|basename}|ucfirst)]</a>
+    <a href="#URL_DOCUMENT"  class="button icon fa-download[ (#ENV{special}|oui)special][ (#ENV{fit}|oui)fit]">[(#TITRE|sinon{#FICHIER|basename}|ucfirst)]</a>
 </div>
     </BOUCLE_img>
 </B_img>
@@ -15,7 +15,7 @@
     <div class="row 100% uniform">
     <BOUCLE_imgs(DOCUMENTS){si #GET{id}|sizeof|=={2}|non}{id_document IN #GET{id}}{par titre, num titre}>
         <div class="[(#ENV{args/XxXxX,12}|div{#ENV{args/n}|match{1|2|3|4|6|12}}|sinon{4})u] 12u(3)">
-                <a href="#URL_DOCUMENT" target="_blank" class="button icon fa-download fit">[(#TITRE|sinon{#FICHIER|basename}|ucfirst)]</a>
+                <a href="#URL_DOCUMENT"  class="button icon fa-download fit">[(#TITRE|sinon{#FICHIER|basename}|ucfirst)]</a>
         </div>
     </BOUCLE_imgs>
     </div>

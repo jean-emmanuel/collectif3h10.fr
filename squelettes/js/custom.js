@@ -22,12 +22,11 @@ $(function() {
 
         $('.bc-player').each(function(){
 
-            $(this).find('img').hide()
+            $(this).find('img, a').hide()
 
             var iframe = $(this).find('iframe'),
                 src  = iframe.attr('src').replace('artwork=none','artwork=small')
 
-                console.log(src)
             iframe.attr('src', src)
         })
 

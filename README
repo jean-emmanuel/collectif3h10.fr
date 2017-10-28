@@ -1,3 +1,10 @@
+Le site du Collectif 3h10 (https://collectif3h10.fr). Pour spip 3.2.
+
+## trucs cools
+- integration youtube/vimeo/dailymotion/bandcamp avec l'url
+- style/mise en page public des textes dans l'interface privée
+- gestion des evenements simplifiée (juste lieu/date/url + rubrique (groupe)) 
+
 ## plugins
 - https://contrib.spip.net/Simple-Calendrier-v2
 

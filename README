@@ -9,5 +9,5 @@ Le site du Collectif 3h10 (https://collectif3h10.fr). Pour spip 3.2.
 - https://contrib.spip.net/Simple-Calendrier-v2
 
 ## notes
-- quelques id_rubriques en dur en squelettes/inc/head.html
+- quelques id_rubriques en dur dans squelettes/inc/head.html
 - clés à remplir dans squelettes/api_keys.php pour les vidéos youtube

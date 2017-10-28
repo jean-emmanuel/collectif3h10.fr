@@ -8,7 +8,7 @@
 
     <a href="#ENV{url}" [data-embed="(#ENV{embed_url})"] class="play" target="_blank">
         <span class="icon">
-                <i class="fa fa-play"#ENV{embed_url}></i>
+                <i class="fa fa-play"></i>
         </span>
 
         <span class="caption [(#TITLE|=={non}|oui)hidden]">[(#TITLE|!={non}|oui|?{#TITLE,#URL})]</span>

@@ -230,24 +230,14 @@ h1, h2, h3 {
         border-radius: 3px;
         // font-size:90%;
         height: 28px;
-        box-shadow: 0 0 0 1px rgba(black, .1) inset,
-                    0 0 10px 0 rgba(black, .2) inset;
 
     }
-
-    input.button {
-        font-family: Lato;
-        font-weight: 600;
-        text-transform: uppercase;
-        background: $accent;
-        color:#fff;
-        box-shadow: 0 -4px 0 0 rgba(black, .4) inset;
+    .email {
+        box-shadow: 0 0 0 1px rgba(black, .1) inset,
+                    0 0 10px 0 rgba(black, .2) inset;
+    }
+    .submit {
         margin-top:4px;
-        padding:5px 8px;
-        display: block;
-        height: 34px;
-        line-height: 20px;
-        cursor: pointer;
     }
 }
 

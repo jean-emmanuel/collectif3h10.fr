@@ -33,7 +33,7 @@
 
 [(#REM) Articles ]
 [(#SET{recent,[(#VAL{Y-m-d H:i:s}|date{#VAL{"-1 day"}|strtotime})]})]
-<BOUCLE_a(ARTICLES){!par date_modif}{!par date}{0,2000}>
+<BOUCLE_a(ARTICLES){!par date_modif}{!par date}{0,2000}{id_rubrique=1}>
 <url>
 	[<loc>(#URL_ARTICLE|url_absolue)</loc>]
 	[(#DATE_MODIF**|>{#GET{recent}}

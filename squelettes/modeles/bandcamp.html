@@ -8,5 +8,8 @@
         <img src="(#GET{thumb})"/>
     [(#URL|oui)</a>]
     ]
-    <div class="frame"><iframe src="https://bandcamp.com/EmbeddedPlayer/album=#ENV{id, #URL|bandcamp_album_id}/size=large/bgcol=ffffff/linkcol=333333/artwork=[(#GET{thumb}|?{none,small})]/transparent=true/" seamless></iframe></div>
+    <div class="frame">
+        <div class="loading icon"><i class="fa fa-bandcamp"></i></div>
+        <iframe src="https://bandcamp.com/EmbeddedPlayer/album=#ENV{id, #URL|bandcamp_album_id}/size=large/bgcol=ffffff/linkcol=333333/artwork=[(#GET{thumb}|?{none,small})]/transparent=true/" seamless></iframe>
+    </div>
 </div>

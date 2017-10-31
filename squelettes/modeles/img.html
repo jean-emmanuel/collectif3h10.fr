@@ -7,7 +7,7 @@
 <div class="image solo [(#ENV{align}|match{left|right}|sinon{fit})]">
 [(#ENV{args/url}|!={non}|oui)<a href="#ENV{url, #URL_DOCUMENT}">]
     #SET{img, #URL_DOCUMENT|image_reduire{640}}
-    [(#ENV{ratio}|oui) #SET{img, #GET{img}|image_recadre{#ENV{ratio}}}]
+    [(#ENV{ratio}|oui) #SET{img, #GET{img}|image_recadre{#ENV{ratio},'-'}}]
     <img src="[(#GET{img}|extraire_attribut{src})]"[ title="(#TITRE|textebrut)"]>
 [(#ENV{args/url}|!={non}|oui)</a>]
 </div>

@@ -26,9 +26,6 @@ $blockquote-size       : rem(23px);
 $blockquote-line-height: 1.5em;
 $blockquote-margin     : $paragraph-margin * 1.5;
 
-// Links
-$link-color: #4eaff6;
-
 // hr
 $hr-margin: 30px;
 
@@ -111,10 +108,10 @@ p {
 a {
     color: $accent;
     text-decoration: none;
-    @include transition(all .2s ease);
+    // @include transition(all .2s ease);
 
     &:hover {
-        color: darken($link-color, 10%);
+        color: lighten($accent, 5%);
     }
 }
 

@@ -1,13 +1,37 @@
 Le site du Collectif 3h10 (https://collectif3h10.fr). Pour spip 3.2.
 
+## structure
+
+- rubriques principales, par ordre numérique (num titre)
+
+  1e -> accueil (utilisé comme sommaire)
+    - liens syndiqués -> dans la barre de navigation principale
+    - articles -> news
+    - sous rubriques -> dans la barre de navigation principale
+
+  2e -> groupes
+    - sous rubriques -> dans la barre de navigation principale
+
+  3e et + -> non affichées
+
+- affichage des rubriques
+
+  - logo -> pour les meta (image facebook etc)
+  - description -> idem
+  - texte -> contenu principal
+  - liens syndiqués -> barre latérale
+  - évènements -> barre latérale (si rubrique sans évènement, tous les évènements du site sont affichés)
+
 ## trucs cools
+
 - integration youtube/vimeo/dailymotion/bandcamp avec l'url
 - style/mise en page public des textes dans l'interface privée
-- gestion des evenements simplifiée (juste lieu/date/url + rubrique (groupe)) 
+- gestion des evenements simplifiée (juste lieu/date/url + rubrique (groupe))
 
-## plugins
+## plugins requis
+
 - https://contrib.spip.net/Simple-Calendrier-v2
 
 ## notes
-- quelques id_rubriques en dur dans squelettes/inc/head.html
+
 - clés à remplir dans squelettes/api_keys.php pour les vidéos youtube

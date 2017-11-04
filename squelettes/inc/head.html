@@ -18,18 +18,25 @@
         <ul>
             <li class="left">
                 <ul>
-                <BOUCLE_pages(RUBRIQUES){id_parent=1}{tout}>
+                <BOUCLE_rubrique_pages(RUBRIQUES){profondeur=0}{par titre, num titre}{0,1}{tout}>
+                    #SET{id_accueil,#ID_RUBRIQUE}
+                    <li class="[(#SOMMAIRE|=={oui}|oui)on] pages"><a href="./">#TITRE</a></li>
+                    <BOUCLE_pages(RUBRIQUES){id_parent=#ID_RUBRIQUE}{tout}>
                     <li class="#EXPOSE pages"><a href="#URL_RUBRIQUE">#TITRE</a></li>
-                </BOUCLE_pages>
-                <BOUCLE_groupes(RUBRIQUES){id_parent=2}{tout}>
+                    </BOUCLE_pages>
+                </BOUCLE_rubrique_pages>
+                <BOUCLE_rubrique_groupes(RUBRIQUES){profondeur=0}{par titre, num titre}{1,1}{tout}>
+                    <BOUCLE_groupes(RUBRIQUES){id_parent=#ID_RUBRIQUE}{tout}>
                     <li class="#EXPOSE"><a href="#URL_RUBRIQUE">#TITRE</a></li>
-                </BOUCLE_groupes>
+                    </BOUCLE_groupes>
+                </BOUCLE_rubrique_groupes>
+
                 </ul>
             </li>
             <li class="right">
                 <ul>
-                <BOUCLE_liens(SITES){id_rubrique=1}{par num nom_site}>
-                <li class=""><a href="#URL_SITE" title="#NOM_SITE" ><i class="fa fa-fw fa-[(#DESCRIPTIF|textebrut|sinon{globe})]"><span>#NOM_SITE</span></i></a></li>
+                <BOUCLE_liens(SITES){id_rubrique=#GET{id_accueil}}{par num nom_site}>
+                    <li class=""><a href="#URL_SITE" title="#NOM_SITE" ><i class="fa fa-fw fa-[(#DESCRIPTIF|textebrut|sinon{globe})]"><span>#NOM_SITE</span></i></a></li>
                 </BOUCLE_liens>
                 </ul>
             </li>

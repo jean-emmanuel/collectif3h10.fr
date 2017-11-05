@@ -32,14 +32,22 @@
 <div class="agenda">
     <h3>Archives</h3>
     <ul>
-    <BOUCLE_archives(EVENEMENTS){si #ENV{id_rubrique}|oui}{id_rubrique?}{!par date_debut}{date_debut < #ENV{date}}>
-        <li class="content">
+    <BOUCLE_archives(EVENEMENTS){id_rubrique?}{!par date_debut}{date_debut < #ENV{date}}>
+        <li class="content" itemprop="event" itemscope itemtype="http://schema.org/Event" >
+            <div class="title" itemprop="name"><a href="[(#URL_RUBRIQUE)]" itemprop="url">
+                <BOUCLE_titre_rubrique_archive(RUBRIQUES){id_rubrique}>
+                    [(#ID_RUBRIQUE|=={1}|?{
+                        #NOM_SITE_SPIP,#TITRE
+                    })]
+                </BOUCLE_titre_rubrique_archive>
+            </a></div>
             <div class="date">
-                [(#DATE_DEBUT|affdate)]
+                <meta itemprop="startDate" content="[(#HORAIRE|=={oui}|?{#DATE_DEBUT|affdate{'c'}, #DATE_DEBUT|affdate{'Y-m-d'}})]"/>
+                [(#DATE_DEBUT|affdate)][(#HORAIRE|=={oui}|oui) - [(#DATE_DEBUT|affdate{'H\Hi'})]]
             </div>
-            <div class="place">
+            <div class="place" itemprop="location" itemscope itemtype="http://schema.org/Place">
             [<a href="(#LIEN_URL)">]
-                <span>#TITRE</span>
+                <span itemprop="address">#TITRE</span>
             [(#LIEN_URL|oui)</a>]
             </div>
             [(#REM) on utilise le titre comme lieu pour utiliser le moins de champ possible]

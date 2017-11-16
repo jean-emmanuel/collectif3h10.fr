@@ -62,7 +62,7 @@
 
         $flux = str_replace('////','<div class="clear"></div>',$flux);
         $flux = preg_replace('/<center>(.*)<\/center>/s','<div class="align-center">$1</div>',$flux);
-        $flux = preg_replace('/<right>(.*)<right>/s','<div class="align-right">$1</div>',$flux);
+        $flux = preg_replace('/<right>(.*)<\/right>/s','<div class="align-right">$1</div>',$flux);
 
         return $flux;
 

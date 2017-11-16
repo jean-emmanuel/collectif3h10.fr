@@ -120,7 +120,7 @@ i {
     height: 241px;
     width:100%;
     position: relative;
-    background: #fff;
+    background-color: #eee;
     box-shadow: 0 1px 1px 0 rgba(black,.2 );
 
 
@@ -144,6 +144,7 @@ i {
         height: 100%;
         flex:1;
         position: relative;
+        background-color: #fff;
         iframe {
             border:0;
             width: 100%;
@@ -254,11 +255,21 @@ ul.spip {
 blockquote.spip {
     padding-left:$paragraph-size;
     font-style:italic;
-    border-left:1px solid rgba(white,.125);
+    :first-child {
+        margin-top:0;
+    }
     &:last-child {
         margin-bottom:0;
     }
+    border-left:4px solid rgba(black, 0.1);
+    padding-left: 14px;
+    text-align: left;
+    + .align-right {
+        font-style:italic;
+        color: $blockquote-color;
+    }
 }
+
 
 
 table {

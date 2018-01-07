@@ -1,0 +1,35 @@
+#INCLURE{fond=inc/meta,html_class=epk,env}
+
+#EVAL{'chr(10)'}#EVAL{'chr(10)'}
+
+<body id="epk">
+<BOUCLE_rubrique(RUBRIQUES){id_rubrique=#ID_RUBRIQUE}{tout}>
+<div class="epk-background" style="background-image:url([(#LOGO_RUBRIQUE|image_reduire{1920s}|extraire_attribut{src})])"></div>
+
+
+
+<div class="wrapper">
+
+<BOUCLE_articles(ARTICLES){id_rubrique}{par num titre, titre}>
+
+<div class="epk-item">
+    <h2>#TITRE</h2>
+
+<div class="epk-content">
+    #TEXTE
+</div>
+</div>
+
+</BOUCLE_articles>
+
+</div>
+
+</BOUCLE_rubrique>
+
+</div>
+
+<!-- JS / source : [(#CHEMIN{scripts.js.html})] -->
+<script src="#PRODUIRE{fond=scripts.js}"></script>
+
+</body>
+</html>

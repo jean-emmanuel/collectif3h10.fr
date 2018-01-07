@@ -1,0 +1,78 @@
+html.epk {
+    overflow: auto;
+}
+#epk {
+    height: 100%;
+    padding:40px 20px;
+    background: #fff;
+    overflow-y: auto;
+
+    .wrapper {
+        max-width:600px;
+    }
+    .epk-background {
+        position: fixed;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        filter:blur(15px);
+        z-index: 0;
+    }
+
+    .epk-item {
+        position: relative;
+        background: rgba(white,0.8);
+        margin-bottom: 2em;
+        box-shadow: 0 1px 5px 0 rgba(black, 0.1);
+        border-radius: 3px;
+        overflow: hidden;
+
+        h2  {
+            font-weight: 300;
+            padding: 12px 10px 10px;
+            font-size: 20px;
+            line-height: 30px;
+            margin: 0;
+        }
+        .epk-content {
+            > :first-child {
+                margin-top: 0;
+            }
+        }
+    }
+
+
+    .epk-header {
+        // background: #333;
+        // opacity: .94;
+        // padding:15px;
+        display: none;
+        h1 {
+            color:rgba(white,.95);
+            margin: 0;padding: 0;
+            line-height: 140px;
+            font-size: 80px;
+            font-weight: 100;
+            opacity: 1;
+            text-align: center;
+        }
+    }
+
+    .player .play .icon {
+        background: transparent;
+        border-color: transparent;
+        color:white;
+        transform: scale(2.6);
+        text-shadow: 0 0 2px rgba(black,0.5);
+        opacity: .9;
+    }
+
+    .bc-player {
+        opacity: .94;
+    }
+
+}
